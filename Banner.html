@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banner Perusahaan Ungu</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a0014;
+  color: white;
+}
+
+/* Banner Container */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #2a003f, #4b0082);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Efek cahaya */
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+  animation: moveLight 8s linear infinite;
+}
+
+/* Isi Banner */
+.banner-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  z-index: 1;
+  flex-wrap: wrap;
+  text-align: left;
+  justify-content: center;
+}
+
+/* Foto Logo */
+.banner-content .logo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(186, 85, 211, 0.8);
+  animation: fadeInLeft 1.2s ease;
+}
+
+/* Foto Poster */
+.banner-content .poster {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 40px rgba(138, 43, 226, 0.8);
+  animation: fadeInRight 1.2s ease;
+}
+
+/* Teks */
+.banner-text {
+  max-width: 400px;
+}
+
+.banner-text h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #d8b4ff;
+  animation: fadeInDown 1.2s ease;
+}
+
+.banner-text p {
+  font-size: 1.1em;
+  opacity: 0.9;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* Tombol */
+.banner-text a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #8a2be2, #ba55d3);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: 0.3s;
+  animation: fadeInUp 1.2s ease 0.3s;
+}
+
+.banner-text a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(186, 85, 211, 0.5);
+}
+
+/* Animasi */
+@keyframes moveLight {
+  0% { transform: translate(-25%, -25%); }
+  50% { transform: translate(25%, 25%); }
+  100% { transform: translate(-25%, -25%); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo, .poster {
+    width: 150px;
+    height: auto;
+  }
+  .banner-text h1 {
+    font-size: 2em;
+  }
+}
+</style>
+</head>
+<body>
+        <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">Kirana<span class="brand-dot">.</span></a>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="open menu">☰</button>
+    </nav>
+  </header>
+
+<section class="banner">
+  <div class="banner-content">
+    <img src="folder_gambar/logo.png" alt="Logo Perusahaan" class="logo">
+    
+    <div class="banner-text">
+      <h1>Nama Perusahaan</h1>
+      <p>Menyediakan solusi digital inovatif dengan sentuhan profesional untuk masa depan yang lebih cerah.</p>
+      <a href="#contact">Hubungi Kami</a>
+    </div>
+
+    <img src="folder_gambar/mg.jpg" alt="Poster Perusahaan" class="poster">
+  </div>
+</section>
+
+</body>
+</html>
+
+
